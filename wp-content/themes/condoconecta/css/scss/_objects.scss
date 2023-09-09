@@ -1,0 +1,298 @@
+.btn {
+    padding: 12px 30px;
+    border: 2px white solid;
+    @include toRem(font-size, 14);
+    font-weight: bold;
+    border-radius: 999px;
+    text-align: center;
+    &.primary {
+        border-color: color(primary, base);
+        color: color(primary, base);
+        &:hover {
+            background-color: color(primary, base);
+            color: white;
+        }
+        &.variation {
+            background-color: color(primary, base);
+            color: white;
+            &:hover {
+                background-color: transparent;
+                color: color(primary, base);
+            }
+        }
+        &.variation-2 {
+            background-color: color(green, base);
+            color: white;
+            border-color: color(green, base);
+            &:hover {
+                background-color: transparent;
+                color: color(green, base);
+            }
+        }        
+    }
+    &.secondary {
+        background-color: white;
+        color: black;
+        padding-left: 45px;
+        padding-right: 45px;
+        &:hover {
+            background-color: transparent;
+            color: white;
+        }            
+    }
+}
+
+.section {
+    &-header {
+        .title {
+            font-weight: bold;
+            @include toRem(font-size, 32);
+            small {
+                margin-top: 1rem;
+                @include toRem(font-size, 20);  
+                font-weight: 500;
+            }
+            > span {
+                > span {
+                    font-weight: 300;
+                }
+            }
+            a {
+                font-weight: 500;
+                @include toRem(font-size, 14);
+                color: color(primary, base);
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+    }
+    padding-bottom: 100px;
+    padding-top: 100px;    
+    &.results {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }    
+}
+
+.event-card {
+    cursor: pointer;
+    padding-left: 9px;
+    padding-right: 9px;    
+    @media screen and (min-width: $screen-md-min) {
+        padding-left: 30px;
+        padding-right: 30px;    
+    }
+    &.hover {
+        .title {
+            color: black;
+        }
+    }
+    &-inner {
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+        @include toRem(font-size, 14);
+        .title {
+            @include toRem(font-size, 18);
+            cursor: pointer;
+            color: color(primary, base);
+            font-weight: 500;
+        }
+        .thumbnail {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+            width: 100%;
+            height: 0;
+            padding: 0 0 88%;
+            @media screen and (min-width: $screen-md-min) {
+                padding: 0 0 69%;
+            }
+        }
+        .info {
+            p {
+                line-height: 1.4;
+                [class*="fa"] {
+                    position: relative;
+                    top: -1px;
+                    &[class*="dollar"] {
+                        border: 2px black solid;
+                        height: 16px;
+                        width: 25px;
+                        font-size: .65rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 999px;                        
+                    }
+                }
+            }
+            .address {
+                p {
+                    [class*="fa"] {
+                        color: color(primary, base);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grid {
+    // margin-left: -15px;
+    // width: calc(100% + 30px) !important;    
+    margin-bottom: -30px;
+    @media screen and (min-width: $screen-md-min) {
+        margin-left: -30px;
+        margin-bottom: -60px;
+        width: calc(100% + 60px) !important;
+    }
+    .event-card {
+        margin-bottom: 30px;
+        &-inner {
+            box-shadow: 0px 3px 15px -13px black;
+            padding-bottom: 32px;
+            overflow: hidden;
+            min-height: 100%;
+            display: flex !important;
+            flex-flow: column wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            .title {
+                padding: 0 32px;
+                color: color(neutrals, darker);
+                @include toRem(font-size, 20);
+                // @media screen and (min-width: $screen-lg-min) { 
+                //     white-space: nowrap;
+                //     overflow: hidden;
+                //     text-overflow: ellipsis;
+                // }
+                margin-bottom: 10px !important;
+                &:hover {
+                    color: color(primary, base);
+                }
+            }
+            .thumbnail {
+                height: 191px;
+            }
+            .info {
+                padding: 0 32px 47px;
+                // p {
+                //     [class*="fa"] {
+                //         top: 1.5px;
+                //     }
+                // }                
+            }
+        }
+        @media screen and (min-width: $screen-md-min) {
+            margin-bottom: 60px
+        }
+    }
+}
+
+.pagination,
+.slick-custom-nav {
+    @include toRem(font-size, 16);
+    font-weight: bold;
+    text-transform: uppercase;
+    .page-numbers {
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+    }
+    .page-numbers,
+    .slick-arrow {
+        height: 26px;
+        width: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        border: 2px black solid;
+        border-radius: 999px;
+        @include toRem(font-size, 16);
+        color: black !important;
+        &.current,
+        &:hover {
+            color: color(primary, base) !important;
+            border-color: color(primary, base);
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    .page-numbers {
+        border-color: color(neutrals, medium);
+        color: color(neutrals, medium);
+        line-height: 1.2;
+        font-weight: 500;
+        &.current {
+            font-weight: bold;
+        }
+    }
+}
+
+.slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    margin-top: 10px !important;  
+    position: relative !important;
+    li {
+        height: 10px !important;
+        width: 10px !important;            
+        button {
+            border-radius: 999px;
+            height: inherit !important;
+            width: inherit !important;
+            background-color: #E8E4E3 !important;
+            &::before {
+                display: none;
+            }
+        }
+        &.slick-active {
+            button {
+                background-color: color(primary, base) !important;
+            }
+        }
+    }
+}
+
+.download-list {
+    margin: 0 -.5rem -.5rem;
+    .download-item {
+        color: color(primary, base);
+        @include toRem(font-size, 14);
+        &-inner {
+            min-height: 100%;
+            border-radius: 8px;
+            background-color: color(neutrals, rose);
+            .text {
+                @include toRem(font-size, 12);
+                line-height: 1.6;
+            }
+            a {
+                color: inherit;
+                [class*="fa"] {
+                    @include toRem(font-size, 18);
+                }
+                &:hover {
+                    color: color(neutrals, darker);
+                }
+            }
+        }
+    }
+}

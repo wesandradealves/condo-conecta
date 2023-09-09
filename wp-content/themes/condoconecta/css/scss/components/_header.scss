@@ -1,0 +1,86 @@
+$gap: 15px;
+
+.header {
+    position: relative;
+    background-color: white;
+    z-index: 30;
+    width: 100%;
+    &-top {
+        box-shadow: 0px 0px 15px -10px black;
+        .container {
+            padding-top: $gap;
+            padding-bottom: $gap;
+            .hamburger {
+                top: 6px;
+                position: relative;        
+            }
+            .navigation {
+                .nav-item {
+                    color: black;
+                    padding: 0 calc(49px/2);
+                    &[class*="current"] {
+                        color: color(primary, base);
+                    }
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+                    &:last-of-type {
+                        padding-right: 0;
+                    }
+                    .nav-link {
+                        color: inherit;
+                        @include toRem(font-size, 12);
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        &:hover {
+                            color: color(primary, base);
+                        }
+                    }
+                }
+            }
+        }        
+    }
+    &.sticky {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        transition: 500ms ease all;
+        &.stuck {
+            top: 0;
+        }
+    }
+    .navigation.mobile {
+        &.is-active {
+            padding: 20px 0;
+            max-height: 500px;
+            opacity: 1;
+        }
+        position: absolute;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: 250ms ease all;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        &.is-active {
+            display: block !important;
+        }
+        .navigation-bottom {
+            padding: 20px 20px 0;
+        }
+        .nav-item {
+            .nav-link {
+                padding: 15px 20px;
+                font-weight: bold;
+                display: block;
+                text-transform: uppercase;
+                @include toRem(font-size, 20);
+                color: color(neutrals, darker);                
+            }
+        }
+    }
+}

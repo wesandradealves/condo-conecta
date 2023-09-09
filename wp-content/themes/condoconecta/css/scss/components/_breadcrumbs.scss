@@ -1,0 +1,19 @@
+.aioseo-breadcrumbs {
+    color: color(primary, base);
+    margin-top: 42px;
+    @media screen and (min-width: $screen-lg-min) {
+        margin-top: 84px;
+    }
+    .aioseo-breadcrumb {
+        @include toRem(font-size, 12);
+        color: inherit;
+        text-transform: uppercase;
+        a {
+            color: inherit;
+        }
+        &-separator {
+            padding: 0 18px;
+            @include toRem(font-size, 16);
+        }
+    }
+}

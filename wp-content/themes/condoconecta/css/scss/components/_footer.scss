@@ -1,0 +1,53 @@
+.footer {
+    background-color: white;
+    width: 100%;
+    &-top {
+        .container {
+            padding-top: 45px;
+            padding-bottom: 45px;
+            .contact-info {
+                .social-networks {
+                    .nav-item {
+                        @include toRem(font-size, 32);
+                        @media screen and (min-width: $screen-lg-min) {
+                            @include toRem(font-size, 16); 
+                        }
+                    }
+                }
+                &--item {
+                    [class*="fa"] {
+                        color: color(primary, base);
+                    }
+                    .text {
+                        @include toRem(font-size, 16);
+                        color: color(neutrals, darker);
+                        a {
+                            color: inherit;
+                            &:hover {
+                                color: color(primary, base);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        background-color: color(primary, base);
+        color: white;
+        a {
+            color: inherit;
+            &:hover {
+                text-decoration: underline
+            }
+        }
+        .container {
+            .text {
+                @include toRem(font-size, 14);
+                text-align: center;
+            }
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }        
+    }
+}

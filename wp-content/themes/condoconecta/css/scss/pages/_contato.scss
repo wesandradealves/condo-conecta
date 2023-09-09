@@ -1,0 +1,54 @@
+.page-template-contato  {
+    .wpcf7-form {
+        @include toRem(font-size, 14);
+        .field-group {
+            margin-bottom: 15px;
+        }
+        label {
+            margin-bottom: 8px;
+            span {
+                color: red;
+            }
+        }
+        input:not([type="submit"]),
+        textarea {
+            border: 2px color(neutrals, medium) solid;
+            border-radius: 8px;
+            color: color(neutrals, darker);
+            padding: 15px 24px;
+            width: 100%;
+            overflow: hidden;
+            resize: none;
+            box-shadow: 0px 3px 15px -13px black;
+            &[aria-invalid="true"] {
+                border-color: red;
+                box-shadow: 0px 3px 15px -13px red;
+            }
+        }
+    }
+    .sidebar {
+        border: 2px color(neutrals, medium) solid;
+        border-radius: 8px;        
+        @include toRem(font-size, 14);
+        color: color(neutrals, darker);
+        box-shadow: 0px 3px 15px -13px black;
+        p {
+            line-height: 1;
+        }
+        a {
+            color: inherit;
+            &:hover {
+                text-decoration: underline;
+                [class*="fa"] {
+                    &:hover {
+                        color: color(neutrals, darker);
+                    }
+                }                
+            }
+        }
+        [class*="fa"] {
+            color: color(primary, base);
+            @include toRem(font-size, 18);
+        }
+    }
+}

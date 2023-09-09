@@ -1,0 +1,14 @@
+.home {
+    #banner {
+        .single-carousel {
+            .banner {
+                .container {
+                    @media screen and (min-width: $screen-lg-min) { 
+                        padding-left: 120px;
+                        padding-right: 120px;
+                    }
+                }
+            }
+        }
+    }
+}

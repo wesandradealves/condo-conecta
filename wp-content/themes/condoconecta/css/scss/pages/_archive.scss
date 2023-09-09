@@ -1,0 +1,89 @@
+.post-type-archive {
+    &.post-type-archive-downloads {
+        .page-header {
+            .container {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            #searchbar {
+                margin-top: 24px;
+                .container {
+                    padding-top: 0 !important;
+                    .pagination {
+                        display: none !important;
+                    }
+                    #search {
+                        width: 100%;
+                        .searchbar {
+                            padding: 0 !important;
+                            justify-content: center;
+                            align-items: center;
+                            .select,
+                            .field-group {
+                                .inner {
+                                    color: color(neutrals, darker);
+                                    border: 0;
+                                }                                
+                            }
+                            .field-group {
+                                padding: 0 !important;
+                                max-width: 484px;
+                                .inner {
+                                    background-color: white;
+                                }          
+                            }                  
+                        }
+                    }                    
+                }                   
+            }            
+        }
+        .downloads-grid {
+            &-results {
+                &--item {
+                    .list-results {
+                        &-header {
+                            border-bottom: 2px color(neutrals, medium) solid;
+                            color: color(primary, base);
+                            @include toRem(font-size, 16);
+                            font-weight: 500
+                        }
+                        &--item {
+                            @include toRem(font-size, 14);
+                            color: color(neutrals, darker);
+                            a {
+                                color: inherit;
+                                &:hover {
+                                    color: color(primary, base);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &-pagination {
+                &--item {
+                    @include toRem(font-size, 16);
+                    text-transform: uppercase;
+                    color: color(neutrals, darker);
+                    padding: 0 9px;
+                    font-weight: bold;
+                    &.active {
+                        color: color(primary, base);
+                        &:hover {
+                            color: color(neutrals, darker);
+                        }
+                    }
+                    a {
+                        color: inherit;
+                        &:hover {
+                            color: color(primary, base);
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

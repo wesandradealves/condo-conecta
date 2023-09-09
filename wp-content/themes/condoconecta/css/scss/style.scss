@@ -1,0 +1,37 @@
+/*! 
+    Theme Name: Workshop Condoconecta
+    Theme URI: 
+    Author: Agência 904
+    Author URI: https://www.904.ag
+    Version: 1.0
+    License: Agência 904
+    License URI: https://www.904.ag
+    Text Domain: condoconecta
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import 'breakpoints';
+@import 'colors';
+@import 'util';
+@import 'reset';
+@import 'objects';
+@import 'general';
+@import './components/breadcrumbs';
+@import './components/searchbar';
+@import './components/page-header';
+@import './components/whatsapp';
+@import './components/banner';
+@import './components/past-events';
+@import './components/recent-events';
+@import './components/testimonials';
+@import './components/social-networks';
+@import './components/team';
+@import './components/header';
+@import './components/footer';
+@import './vendors/slick';
+@import './vendors/slick-theme';
+@import './pages/home';
+@import './pages/sobre';
+@import './pages/obrigado';
+@import './pages/contato';
+@import './pages/single';
+@import './pages/archive';

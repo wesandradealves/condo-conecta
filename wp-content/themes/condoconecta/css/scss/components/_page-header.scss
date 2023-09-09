@@ -1,0 +1,24 @@
+.page-header {
+    color: white;
+    > .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .title {
+            @include toRem(font-size, 40);
+        }
+        .breadcrumbs {
+            .container {
+                padding: 0;
+                .aioseo-breadcrumbs {
+                    color: inherit;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    background-position: center 0;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-color: color(primary, base);
+    background: linear-gradient(90deg, color(primary, base) 0%, color(primary, light) 100%);     
+}
